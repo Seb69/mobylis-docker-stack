@@ -2,7 +2,7 @@ version: '3.6'
 
 services:
 
- elasticsearch:
+  elasticsearch:
     image: mobylis/elasticsearch:latest
     environment:
       - cluster.name=docker-cluster
@@ -20,26 +20,24 @@ services:
     ports:
       - 9200:9200
 
-  # mobylis-backend:
-  #   image: mobylis/backend:latest
-  #   environment:
-  #     CLOUDINARY_API_KEY: /run/secrets/CLOUDINARY_API_KEY
-  #     CLOUDINARY_API_SECRET: /run/secrets/CLOUDINARY_API_SECRET
-  #   secrets:
-  #     - mysql_password
-  #     - SPRING_PROFILE
-  #     - CLOUDINARY_API_KEY
-  #     - CLOUDINARY_API_SECRET
-  #   ports:
-  #     - 80:9090
+# mobylis-backend:
+#   image: mobylis/backend:latest
+#   environment:
+#     CLOUDINARY_API_KEY: /run/secrets/CLOUDINARY_API_KEY
+#     CLOUDINARY_API_SECRET: /run/secrets/CLOUDINARY_API_SECRET
+#   secrets:
+#     - mysql_password
+#     - SPRING_PROFILE
+#     - CLOUDINARY_API_KEY
+#     - CLOUDINARY_API_SECRET
+#   ports:
+#     - 80:9090
 
 volumes: 
   esdata: 
 
-#secrets: 
-#  SPRING_PROFILE:
-#    external: true
-#  CLOUDINARY_API_KEY:
-#    external: true
-#  CLOUDINARY_API_SECRET:
-#    external: true
+# secrets: 
+#   mysql_root_password:
+#     external: true
+#   mysql_password:
+#     external: true
